@@ -1,0 +1,28 @@
+{
+  "name": "@sudobility/screenwriter_api_mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server (stdio) that lets a writer's AI assistant read and edit their Fadewright scripts",
+  "type": "module",
+  "license": "BUSL-1.1",
+  "author": "Sudobility",
+  "bin": {
+    "fadewright-mcp": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "smoke": "bun scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.4"
+  }
+}
