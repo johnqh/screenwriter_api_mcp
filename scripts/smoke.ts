@@ -1,7 +1,7 @@
 /**
  * Stdio smoke test (spec 07 section 11.1) against a REAL screenwriter_api.
  *
- * Boots screenwriter_api on a free port against `screenwriter_test` (never 8042 / screenwriter_dev), makes
+ * Boots screenwriter_api on a free port against `screenwriter_test` (never 8036 / screenwriter_dev), makes
  * a user + workspace + project, imports a small Fountain script through the API, creates read_write and
  * read keys, launches THIS MCP server as a stdio child with the SDK client, and drives every tool.
  *
@@ -41,7 +41,7 @@ async function freePort(): Promise<number> {
   const s = Bun.serve({ port: 0, fetch: () => new Response("") });
   const p = s.port!;
   await s.stop(true);
-  if (p === 8042) throw new Error("got port 8042");
+  if (p === 8036) throw new Error("got port 8036");
   return p;
 }
 
@@ -53,7 +53,7 @@ async function bootApi(port: number) {
       ...process.env,
       PORT: String(port),
       DATABASE_URL: TEST_DB,
-      PUBLIC_APP_URL: "http://localhost:5173",
+      PUBLIC_APP_URL: "http://localhost:5143",
       AI_TEST_MODE: "1",
       API_KEY_PEPPER: "smoke-pepper-not-a-secret",
       SKIP_DB_INIT: "1",

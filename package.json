@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/screenwriter_api_mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "MCP server (stdio) that lets a writer's AI assistant read and edit their Fadewright scripts",
   "type": "module",

@@ -5,7 +5,7 @@
  *
  * Config (env wins over the optional file ~/.fadewright/config.json):
  *   FADEWRIGHT_API_KEY          personal API key (fwk_...), scoped to one workspace, read or read_write
- *   FADEWRIGHT_API_URL          API base URL (default http://localhost:8042)
+ *   FADEWRIGHT_API_URL          API base URL (default http://localhost:8036)
  *   FADEWRIGHT_MAX_OUTPUT_CHARS ceiling per tool result (default 60000)
  *   FADEWRIGHT_CONFIG_PATH      config file override
  *

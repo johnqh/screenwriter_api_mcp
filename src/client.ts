@@ -37,7 +37,7 @@ export class NoKeyError extends Error {
 }
 
 let config: ClientConfig = {
-  apiUrl: "http://localhost:8042",
+  apiUrl: "http://localhost:8036",
   apiKey: undefined,
   version: "0.0.0",
   maxOutputChars: 60000,

@@ -41,7 +41,7 @@ export interface ResolvedConfig {
   maxOutputChars: number;
 }
 
-export const DEFAULT_API_URL = "http://localhost:8042";
+export const DEFAULT_API_URL = "http://localhost:8036";
 export const DEFAULT_MAX_OUTPUT_CHARS = 60000;
 
 /** Resolve each value from env (empty counts as unset), then the file, then the default. */

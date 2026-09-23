@@ -10,7 +10,7 @@ You need [Bun](https://bun.sh), this repo, and a running Fadewright API.
 2. Create an API key. In the Fadewright app use Settings, API keys. Or against a local API (dev sign-in bypass shown):
 
    ```sh
-   curl -s -X POST http://localhost:8042/api/v1/api-keys \
+   curl -s -X POST http://localhost:8036/api/v1/api-keys \
      -H "Authorization: Bearer dev:me:me@example.com" -H "Content-Type: application/json" \
      -d '{"name":"my assistant","workspaceId":"<your workspace id>","scope":"read_write"}'
    ```
@@ -21,7 +21,7 @@ You need [Bun](https://bun.sh), this repo, and a running Fadewright API.
    ```sh
    claude mcp add fadewright \
      -e FADEWRIGHT_API_KEY=fwk_xxxxxxxx_xxxxxxxx \
-     -e FADEWRIGHT_API_URL=http://localhost:8042 \
+     -e FADEWRIGHT_API_URL=http://localhost:8036 \
      -- bun run /path/to/screenwriter_api_mcp/src/index.ts
    ```
 
@@ -35,7 +35,7 @@ You need [Bun](https://bun.sh), this repo, and a running Fadewright API.
          "args": ["run", "/path/to/screenwriter_api_mcp/src/index.ts"],
          "env": {
            "FADEWRIGHT_API_KEY": "fwk_xxxxxxxx_xxxxxxxx",
-           "FADEWRIGHT_API_URL": "http://localhost:8042"
+           "FADEWRIGHT_API_URL": "http://localhost:8036"
          }
        }
      }
@@ -48,7 +48,7 @@ You need [Bun](https://bun.sh), this repo, and a running Fadewright API.
 | Env var | Config file key | Default | Meaning |
 |---|---|---|---|
 | `FADEWRIGHT_API_KEY` | `apiKey` | none | Personal API key (`fwk_...`) |
-| `FADEWRIGHT_API_URL` | `apiUrl` | `http://localhost:8042` | API base URL |
+| `FADEWRIGHT_API_URL` | `apiUrl` | `http://localhost:8036` | API base URL |
 | `FADEWRIGHT_MAX_OUTPUT_CHARS` | `maxOutputChars` | `60000` | Ceiling per tool result |
 | `FADEWRIGHT_CONFIG_PATH` | | `~/.fadewright/config.json` | Config file location |
 

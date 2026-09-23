@@ -49,7 +49,7 @@ describe("client", () => {
 describe("config resolution", () => {
   it("env beats file beats default; empty env counts as unset", () => {
     const stored = { apiUrl: "http://file", apiKey: "fwk_file", maxOutputChars: 5000 };
-    expect(resolveConfig({}, {})).toMatchObject({ apiUrl: "http://localhost:8042", apiKey: undefined, maxOutputChars: 60000 });
+    expect(resolveConfig({}, {})).toMatchObject({ apiUrl: "http://localhost:8036", apiKey: undefined, maxOutputChars: 60000 });
     expect(resolveConfig({}, stored)).toMatchObject({ apiUrl: "http://file", apiKey: "fwk_file", maxOutputChars: 5000 });
     expect(resolveConfig({ FADEWRIGHT_API_URL: "http://env", FADEWRIGHT_API_KEY: "fwk_env", FADEWRIGHT_MAX_OUTPUT_CHARS: "100" }, stored)).toMatchObject({
       apiUrl: "http://env", apiKey: "fwk_env", maxOutputChars: 100,

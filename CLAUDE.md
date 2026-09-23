@@ -30,7 +30,7 @@ tests/              vitest: compact, errors, refs, commands, client/config
 - `bun run start` - run the server (needs `FADEWRIGHT_API_KEY`, `FADEWRIGHT_API_URL`)
 - `bun run typecheck` (`bunx tsc --noEmit`; tsconfig has `noEmit: true`, never run an emitting tsc)
 - `bunx vitest run` - unit tests (compact, error mapping, refs, command builders, client headers). Never `bun test`.
-- `bun run smoke` - boots `../screenwriter_api` on a free port against `screenwriter_test` (`AI_TEST_MODE=1`, pepper set), imports Fountain, creates keys, launches this server as a stdio child and drives every tool, including a read-only key. Run `DATABASE_URL=postgres://localhost:5432/screenwriter_test PUBLIC_APP_URL=http://localhost:5173 bun run db:init` in the API repo first. Never uses port 8042 or `screenwriter_dev` (it refuses any other DB).
+- `bun run smoke` - boots `../screenwriter_api` on a free port against `screenwriter_test` (`AI_TEST_MODE=1`, pepper set), imports Fountain, creates keys, launches this server as a stdio child and drives every tool, including a read-only key. Run `DATABASE_URL=postgres://localhost:5432/screenwriter_test PUBLIC_APP_URL=http://localhost:5143 bun run db:init` in the API repo first. Never uses port 8036 or `screenwriter_dev` (it refuses any other DB).
 
 ## Patterns
 
