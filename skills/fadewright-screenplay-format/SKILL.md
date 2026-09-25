@@ -1,11 +1,11 @@
 ---
 name: fadewright-screenplay-format
-description: Use when writing, fixing, or converting script text in Fadewright so it follows the document's template. Trigger on "format this scene", "is this formatted right", "turn my notes into a scene", "fix the sluglines", "what element should this be", or before any insert_elements, insert_scene, or change_element_style call.
+description: Use when writing, fixing, or converting script text in ViaInk so it follows the document's template. Trigger on "format this scene", "is this formatted right", "turn my notes into a scene", "fix the sluglines", "what element should this be", or before any insert_elements, insert_scene, or change_element_style call.
 ---
 
-# Fadewright screenplay format
+# ViaInk screenplay format
 
-A Fadewright script is a flat list of **elements**, each with a **style** from the document's template. Scenes are not containers: a scene is a Scene Heading element plus the elements after it until the next Scene Heading. The heading's element id is the scene id.
+A ViaInk script is a flat list of **elements**, each with a **style** from the document's template. Scenes are not containers: a scene is a Scene Heading element plus the elements after it until the next Scene Heading. The heading's element id is the scene id.
 
 ## Before you write
 

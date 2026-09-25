@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * Fadewright MCP server (stdio). Lets a writer's own AI assistant read and edit their Fadewright scripts
+ * ViaInk MCP server (stdio). Lets a writer's own AI assistant read and edit their ViaInk scripts
  * over the REST API with a personal API key.
  *
  * Config (env wins over the optional file ~/.fadewright/config.json):

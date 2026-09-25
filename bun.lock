@@ -6,7 +6,7 @@
       "name": "@sudobility/screenwriter_api_mcp",
       "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
-        "@sudobility/screenwriter_types": "^0.1.4",
+        "@sudobility/screenwriter_types": "^0.1.5",
         "zod": "^4.4.3",
       },
       "devDependencies": {
@@ -61,7 +61,7 @@
 
     "@standard-schema/spec": ["@standard-schema/spec@1.1.0", "", {}, "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="],
 
-    "@sudobility/screenwriter_types": ["@sudobility/screenwriter_types@0.1.4", "", { "dependencies": { "@sudobility/types": "^1.9.67", "@sudobility/writing_core": "^0.1.2", "lib0": "0.2.117", "zod": "^4.6.5" } }, "sha512-167+rh1qf+/LP9TBqUew4LL+MD2xYFjrkRZrhAQwgCqD221AlqXMIWyj3IoXRJzbLAW3KcD33BhtIJgpCDl1fA=="],
+    "@sudobility/screenwriter_types": ["@sudobility/screenwriter_types@0.1.5", "", { "dependencies": { "@sudobility/types": "^1.9.67", "@sudobility/writing_core": "^0.1.2", "lib0": "0.2.117", "zod": "^4.6.5" } }, "sha512-wCfiBVewpZ9BG8ADaXmzhRtW/jnDrup9cunH8/BkO3EH0sMzv9V5X4+diShNoYZFDVXFAD80ZPfIEM+ASH1nQQ=="],
 
     "@sudobility/types": ["@sudobility/types@1.9.67", "", {}, "sha512-d+jk4L9i8VNvOnCJW/craqiiUTPH5aRq4KYe/QBrBU3mCcTfoYjgzzXopVQRcthiZ5dwQAEpdqCTQ0gAWRN6Ww=="],
 

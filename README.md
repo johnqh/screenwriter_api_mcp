@@ -1,13 +1,13 @@
 # @sudobility/screenwriter_api_mcp
 
-An [MCP](https://modelcontextprotocol.io) server that lets your own AI assistant (Claude Code, Claude Desktop, or any MCP client that launches stdio servers) read and edit your Fadewright scripts. It runs locally, talks to the Fadewright REST API with a personal API key, and sends every edit as a single atomic command batch marked as coming from an AI assistant.
+An [MCP](https://modelcontextprotocol.io) server that lets your own AI assistant (Claude Code, Claude Desktop, or any MCP client that launches stdio servers) read and edit your ViaInk scripts. It runs locally, talks to the ViaInk REST API with a personal API key, and sends every edit as a single atomic command batch marked as coming from an AI assistant.
 
 ## Connect it
 
-You need [Bun](https://bun.sh), this repo, and a running Fadewright API.
+You need [Bun](https://bun.sh), this repo, and a running ViaInk API.
 
 1. Install dependencies: `bun install`
-2. Create an API key. In the Fadewright app use Settings, API keys. Or against a local API (dev sign-in bypass shown):
+2. Create an API key. In the ViaInk app use Settings, API keys. Or against a local API (dev sign-in bypass shown):
 
    ```sh
    curl -s -X POST http://localhost:8036/api/v1/api-keys \
@@ -41,7 +41,7 @@ You need [Bun](https://bun.sh), this repo, and a running Fadewright API.
      }
    }
    ```
-4. Ask your assistant: "Call whoami on Fadewright", then "list my projects and outline the first script".
+4. Ask your assistant: "Call whoami on ViaInk", then "list my projects and outline the first script".
 
 ## Configuration
 

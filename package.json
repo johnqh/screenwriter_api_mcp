@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/screenwriter_api_mcp",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "description": "MCP server (stdio) that lets a writer's AI assistant read and edit their Fadewright scripts",
   "type": "module",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@sudobility/screenwriter_types": "^0.1.4",
+    "@sudobility/screenwriter_types": "^0.1.5",
     "zod": "^4.4.3"
   },
   "devDependencies": {

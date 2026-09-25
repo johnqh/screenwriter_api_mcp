@@ -1,6 +1,6 @@
 # screenwriter_api_mcp
 
-MCP server (stdio) that lets a writer's own AI assistant (Claude Code, Claude Desktop, any stdio MCP client) read and edit their Fadewright scripts. A thin local client over the `screenwriter_api` REST API with a personal API key (`fwk_...`). Spec: `../screenwriter_plans/specs/07-mcp-and-skills.md`. Reference implementation: `../shapeshyft_api_mcp`.
+MCP server (stdio) that lets a writer's own AI assistant (Claude Code, Claude Desktop, any stdio MCP client) read and edit their ViaInk scripts. A thin local client over the `screenwriter_api` REST API with a personal API key (`fwk_...`). Spec: `../screenwriter_plans/specs/07-mcp-and-skills.md`. Reference implementation: `../shapeshyft_api_mcp`.
 
 ## Tech stack
 
