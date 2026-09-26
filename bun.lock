@@ -6,7 +6,7 @@
       "name": "@sudobility/screenwriter_api_mcp",
       "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
-        "@sudobility/screenwriter_types": "^0.1.5",
+        "@sudobility/screenwriter_types": "^0.1.6",
         "zod": "^4.4.3",
       },
       "devDependencies": {
@@ -61,9 +61,9 @@
 
     "@standard-schema/spec": ["@standard-schema/spec@1.1.0", "", {}, "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="],
 
-    "@sudobility/screenwriter_types": ["@sudobility/screenwriter_types@0.1.5", "", { "dependencies": { "@sudobility/types": "^1.9.67", "@sudobility/writing_core": "^0.1.2", "lib0": "0.2.117", "zod": "^4.6.5" } }, "sha512-wCfiBVewpZ9BG8ADaXmzhRtW/jnDrup9cunH8/BkO3EH0sMzv9V5X4+diShNoYZFDVXFAD80ZPfIEM+ASH1nQQ=="],
+    "@sudobility/screenwriter_types": ["@sudobility/screenwriter_types@0.1.6", "", { "dependencies": { "@sudobility/types": "^1.9.68", "@sudobility/writing_core": "^0.1.2", "lib0": "0.2.117", "zod": "^4.6.5" } }, "sha512-HiQ5s6bo02zW30ouqD5h0GZPbPjbywPy26COe+OUHb8OZVIS7FX4cr40NFK+5diHhKBB0xtwqV9LWBAoNnX/4g=="],
 
-    "@sudobility/types": ["@sudobility/types@1.9.67", "", {}, "sha512-d+jk4L9i8VNvOnCJW/craqiiUTPH5aRq4KYe/QBrBU3mCcTfoYjgzzXopVQRcthiZ5dwQAEpdqCTQ0gAWRN6Ww=="],
+    "@sudobility/types": ["@sudobility/types@1.9.68", "", {}, "sha512-4LL5+UfcqQcc0PKKR/z/PqS6j9DQPVkkjL+3oOW+Bwx0TAu1SVKAlPhlt/9ruNMW+abcHuZoFvbOVD5gdYBSGw=="],
 
     "@sudobility/writing_core": ["@sudobility/writing_core@0.1.2", "", { "dependencies": { "@noble/hashes": "^2.4.0", "harfbuzzjs": "1.6.1", "yjs": "^13.6.32", "zod": "^4.6.5" } }, "sha512-pxv/Me1QfdkfIpRLK5S+ZhPlAgQbFJY7EePx/DwD4emaHgrNuf4mncAbbjXaa3UFe1mscT05/STridxhnt+Ixw=="],
 
