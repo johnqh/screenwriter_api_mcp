@@ -2,6 +2,8 @@
 
 MCP server (stdio) that lets a writer's own AI assistant (Claude Code, Claude Desktop, any stdio MCP client) read and edit their ViaInk scripts. A thin local client over the `screenwriter_api` REST API with a personal API key (`fwk_...`). Spec: `../screenwriter_plans/specs/07-mcp-and-skills.md`. Reference implementation: `../shapeshyft_api_mcp`.
 
+Product name is **ViaInk**; technical identifiers keep the old name `fadewright` (env vars `FADEWRIGHT_*`, `~/.fadewright`, `fadewright://` URIs, `X-Client: fadewright-mcp/<version>`, bin `fadewright-mcp`). The two names coexist on purpose — do not "fix" one to the other.
+
 ## Tech stack
 
 Bun, TypeScript, `@modelcontextprotocol/sdk`, `zod` (imported as `zod/v4`), vitest. No database, no Yjs, no `writing_core`, no `screenwriter_client/lib`, no `writing_ui`: it talks to the API over HTTP only.
@@ -49,6 +51,8 @@ tests/              vitest: compact, errors, refs, commands, client/config
 - Export supports fountain, fdx, json only; import supports fountain, fdx, fade in (content detected, filename is a hint).
 - `insert_scene` sets a synopsis in a second batch (the new heading id is unknown inside the first).
 - `bunx vitest run` runs under Node; the smoke test needs Bun (spawns the API and this server).
+- `bun install` pulls `@sudobility/*` from GitHub Packages (`.npmrc` routes `@sudobility` to `npm.pkg.github.com`); needs a token with `read:packages` in `~/.npmrc`. CI uses `GH_PACKAGES_READ_TOKEN`.
+- Private package (`"private": true`, `skip-npm-publish` in CI): CI runs tests/lint/build only, never publishes.
 
 ## Related projects
 

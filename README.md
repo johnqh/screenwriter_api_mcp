@@ -2,11 +2,13 @@
 
 An [MCP](https://modelcontextprotocol.io) server that lets your own AI assistant (Claude Code, Claude Desktop, or any MCP client that launches stdio servers) read and edit your ViaInk scripts. It runs locally, talks to the ViaInk REST API with a personal API key, and sends every edit as a single atomic command batch marked as coming from an AI assistant.
 
+The product is **ViaInk**; the technical identifiers keep the original name **`fadewright`** — the env vars (`FADEWRIGHT_*`), config dir (`~/.fadewright`), resource URIs (`fadewright://`), and the `X-Client` header the API uses to record MCP as the edit's origin.
+
 ## Connect it
 
 You need [Bun](https://bun.sh), this repo, and a running ViaInk API.
 
-1. Install dependencies: `bun install`
+1. Install dependencies: `bun install`. The `@sudobility/*` dependencies install from GitHub Packages (see `.npmrc`), so you need `npm.pkg.github.com` auth — a GitHub token with `read:packages` in your `~/.npmrc` (e.g. `//npm.pkg.github.com/:_authToken=<token>`).
 2. Create an API key. In the ViaInk app use Settings, API keys. Or against a local API (dev sign-in bypass shown):
 
    ```sh
