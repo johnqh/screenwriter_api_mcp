@@ -70,7 +70,7 @@ interface Envelope {
   details?: Record<string, unknown>;
 }
 
-async function request<T>(method: string, path: string, options: RequestOptions = {}): Promise<T> {
+async function request<T>(method: string, path: string, options: RequestOptions = {}, full = false): Promise<T> {
   if (!config.apiKey) throw new NoKeyError();
   const url = new URL(`${config.apiUrl}/api/v1${path}`);
   for (const [k, v] of Object.entries(options.query ?? {})) {
@@ -104,8 +104,11 @@ async function request<T>(method: string, path: string, options: RequestOptions 
   if (!res.ok || json.success === false) {
     throw new ApiError(json.error ?? `${res.status} ${res.statusText}`, res.status, json.code ?? "UNKNOWN", json.details);
   }
-  return json.data as T;
+  return (full ? json : json.data) as T;
 }
 
 export const get = <T = unknown>(path: string, options?: RequestOptions) => request<T>("GET", path, options);
+
+/** Like {@link get} but returns the whole canonical envelope — for list endpoints whose `PaginatedResponse` carries the array in `data` and the cursor in a sibling `pagination`. */
+export const getPage = <T = unknown>(path: string, options?: RequestOptions) => request<T>("GET", path, options, true);
 export const post = <T = unknown>(path: string, options?: RequestOptions) => request<T>("POST", path, options);

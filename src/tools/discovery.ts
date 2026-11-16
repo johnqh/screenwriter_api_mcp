@@ -21,7 +21,7 @@ export function registerDiscoveryTools(server: McpServer) {
     async () =>
       run(async () => {
         const [me, ws, scope] = await Promise.all([api.getMe(), api.getWorkspaces(), api.getScope()]);
-        const w = ws.items[0];
+        const w = ws.data[0];
         const key = client.getConfig().apiKey ?? "";
         return json({
           user: { id: me.userId, email: me.email, name: me.displayName },
@@ -46,12 +46,12 @@ export function registerDiscoveryTools(server: McpServer) {
     async ({ query }) =>
       run(async () => {
         const wid = await api.getWorkspaceId();
-        const r = await client.get<api.Paginated<api.ProjectItem>>(`/workspaces/${client.seg(wid)}/projects`, {
+        const r = await client.getPage<api.Paginated<api.ProjectItem>>(`/workspaces/${client.seg(wid)}/projects`, {
           query: { limit: 100, q: query },
         });
         return json({
-          projects: r.items.map(p => ({ id: p.id, name: p.name, documents: p.documentCount, updated: shortTime(p.updatedAt) })),
-          nextCursor: r.nextCursor,
+          projects: r.data.map(p => ({ id: p.id, name: p.name, documents: p.documentCount, updated: shortTime(p.updatedAt) })),
+          nextCursor: r.pagination.nextCursor,
         });
       })
   );
@@ -67,11 +67,11 @@ export function registerDiscoveryTools(server: McpServer) {
     },
     async ({ projectId }) =>
       run(async () => {
-        const r = await client.get<api.Paginated<api.DocumentMetaView>>(`/projects/${client.seg(projectId)}/documents`, {
+        const r = await client.getPage<api.Paginated<api.DocumentMetaView>>(`/projects/${client.seg(projectId)}/documents`, {
           query: { limit: 100 },
         });
         return json({
-          documents: r.items.map(d => ({
+          documents: r.data.map(d => ({
             id: d.id,
             title: d.title,
             kind: d.kind,
@@ -80,7 +80,7 @@ export function registerDiscoveryTools(server: McpServer) {
             words: d.wordCount,
             updated: shortTime(d.updatedAt),
           })),
-          nextCursor: r.nextCursor,
+          nextCursor: r.pagination.nextCursor,
         });
       })
   );

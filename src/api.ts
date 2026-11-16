@@ -12,9 +12,10 @@ import type { Command } from "./commands.ts";
 
 // ---- Response shapes (local mirror of screenwriter_types, checked by the smoke test) ----
 
+/** Canonical list envelope (mirror of `@sudobility/types` `PaginatedResponse`): array in `data`, cursor in `pagination`. */
 export interface Paginated<T> {
-  items: T[];
-  nextCursor: string | null;
+  data: T[];
+  pagination: { nextCursor: string | null };
 }
 
 export interface Me {
@@ -85,7 +86,7 @@ interface SceneReadRaw {
 // ---- Discovery ----
 
 export const getMe = () => client.get<Me>("/me");
-export const getWorkspaces = () => client.get<Paginated<WorkspaceItem>>("/workspaces");
+export const getWorkspaces = () => client.getPage<Paginated<WorkspaceItem>>("/workspaces");
 export const getDocument = (did: string) => client.get<DocumentDetailView>(`/documents/${seg(did)}`);
 
 let workspaceIdCache: string | undefined;
@@ -93,7 +94,7 @@ let workspaceIdCache: string | undefined;
 export async function getWorkspaceId(): Promise<string> {
   if (workspaceIdCache) return workspaceIdCache;
   const ws = await getWorkspaces();
-  const first = ws.items[0];
+  const first = ws.data[0];
   if (!first) throw new ToolError("This key sees no workspace.");
   workspaceIdCache = first.id;
   return first.id;
